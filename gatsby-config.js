@@ -13,7 +13,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sass',
-    `gatsby-plugin-typography`,
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
     {
       resolve: "gatsby-source-apiserver",
       options: {
