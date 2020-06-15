@@ -5,7 +5,7 @@ function Image(props) {
 	const alt = props.alt ? props.alt : '';
 
 	const image = props.allFiles.filter(image => image.name === name).map(filteredImg => (
-			<img key={filteredImg.name} src={filteredImg.publicURL} alt={alt} role="img" draggable="false" />
+			<img key={filteredImg.name} src={filteredImg.publicURL} alt={alt} draggable="false" />
 	))
 
 	return (

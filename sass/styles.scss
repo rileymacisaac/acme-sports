@@ -7,10 +7,10 @@
 
 // A map of breakpoints.
 $breakpoints: (
-	sm: 576px,
-	md: 768px,
-	lg: 1024px,
-	xl: 1280px,
+	sm: 36rem,
+	md: 48rem,
+	lg: 64rem,
+	xl: 80rem,
 );
 
 // Colors
@@ -19,8 +19,8 @@ $blue-light: #F5F9FF;
 $gray: #333;
 
 // Spacing Variables
-$padding-sm: 16px;
-$padding-md: 24px;
+$padding-sm: 1rem;
+$padding-md: 1.5rem;
 
 
 // Mixins
@@ -95,7 +95,7 @@ $padding-md: 24px;
 	&:focus {
 		outline: currentcolor none medium;
 		transition: box-shadow 0.2s ease 0s;
-		box-shadow: rgba(255, 255, 255, 0.8) 0 0 0 2px, rgb(34, 34, 34) 0 0 0 4px;
+		box-shadow: rgba(255, 255, 255, 0.8) 0 0 0 0.125rem, rgb(34, 34, 34) 0 0 0 0.25rem;
 	}
 }
 
@@ -113,12 +113,12 @@ body {
 }
 
 .container {
-	max-width: 1280px - $padding-sm * 2;
+	max-width: 80rem - $padding-sm * 2;
 	margin: auto;
 	padding: 0 $padding-sm * 2;
 
 	@include respond-above(lg) {
-		max-width: 1280px - $padding-md * 2;
+		max-width: 80rem - $padding-md * 2;
 		padding:  0 $padding-md * 2;
 	}
 }
@@ -126,25 +126,25 @@ body {
 .skip-link:focus {
 	position: absolute;
 	z-index: 10;
-	left: 10px;
-	top: 10px;
+	left: 0.625rem;
+	top: 0.625rem;
 }
 
 .link {
 	display: inline-block;
 	background: $blue;
-	border: 2px solid transparent;
+	border: 0.125rem solid transparent;
 	color: white;
-	padding: 10px 30px;
+	padding: 0.625rem 1.875rem;
 	letter-spacing: 0.05em;
 	text-decoration: none;
-	border-radius: 5px;
-	font-size: 18px;
+	border-radius: 0.3125rem;
+	font-size: 1.125rem;
 	text-transform: uppercase;
 	transition: 0.25s ease-in-out all;
 
 	&:hover {
-		border: 2px solid $blue;
+		border: 0.125rem solid $blue;
 		color: $blue;
 		background: transparent;
 	}
@@ -172,9 +172,9 @@ body {
 }
 
 .box {
-	border: 1px solid $blue;
+	border: 0.0625rem solid $blue;
 	background: white;
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 }
 
 // Forms
@@ -183,7 +183,7 @@ label,
 	width: 100%;
 	display: block;
 	text-transform: uppercase;
-	margin-bottom: 5px;
+	margin-bottom: 0.3125rem;
 }
 
 .input-select {
@@ -192,8 +192,8 @@ label,
 	select {
 		appearance: none;
 		outline: none;
-		padding: 0 50px 0 20px;
-		height: 54px;
+		padding: 0 3.125rem 0 1.25rem;
+		height: 3.375rem;
 		width: 100%;
 	}
 
@@ -203,11 +203,11 @@ label,
 		top: 50%;
 		right: $padding-md;
 		transform: translateY(-50%) rotate(45deg);
-		height: 10px;
-		width: 10px;
+		height: 0.625rem;
+		width: 0.625rem;
 		border-style: solid;
 		border-color: $blue;
-		border-width: 0 3px 3px 0;
+		border-width: 0 0.1875rem 0.1875rem 0;
 		transition: border-width 150ms ease-in-out;
 		pointer-events: none;
 	}
@@ -219,7 +219,7 @@ label,
 	position: relative;
 
 	+ .input-radio {
-		margin-left: 20px;
+		margin-left: 1.25rem;
 	}
 
 	input[type='radio'] {
@@ -244,11 +244,11 @@ label,
 	&__circle {
 		position: relative;
 		display: inline-block;
-		border: 2px solid $blue;
-		width: 24px;
-		height: 24px;
+		border: 0.125rem solid $blue;
+		width: 1.5rem;
+		height: 1.5rem;
 		border-radius: 100%;
-		margin-right: 10px;
+		margin-right: 0.625rem;
 		background: white;
 
 		&:before,
@@ -263,18 +263,18 @@ label,
 		}
 
 		&:before {
-			top: -10px;
-			right: -10px;
-			bottom: -10px;
-			left: -10px;
+			top: -0.625rem;
+			right: -0.625rem;
+			bottom: -0.625rem;
+			left: -0.625rem;
 			background: rgba($blue, 0.2);
 		}
 
 		&:after {
-			left: 4px;
-			top: 4px;
-			width: 12px;
-			height: 12px;
+			left: 0.25rem;
+			top: 0.25rem;
+			width: 0.75rem;
+			height: 0.75rem;
 			background: $blue;
 		}
 	}
@@ -311,7 +311,7 @@ fieldset {
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 10px 0;
+	padding: 0.625rem 0;
 
 	&__wrapper {
 		align-items: center;
@@ -319,14 +319,13 @@ fieldset {
 	}
 
 	&__logo {
-		font-size: 36px;
+		font-size: 2.25rem;
 		color: $blue;
 		text-decoration: none;
 		white-space: nowrap;
 
 		@include respond-above(lg) {
-			font-size: 42px;
-
+			font-size: 2.625rem;
 		}
 	}
 }
@@ -335,19 +334,19 @@ fieldset {
 
 // Hero
 .hero {
-	padding: 180px 0 100px;
+	padding: 11.25rem 0 6.25rem;
 
 	&__wrapper {
 		align-items: center;
 		justify-content: center;
 
 		& > * {
-			max-width: 768px;
+			max-width: 48rem;
 		}
 	}
 
 	&__content {
-		flex-basis: 500px;
+		flex-basis: 31.25rem;
 		flex-grow: 1;
 	}
 
@@ -360,15 +359,15 @@ fieldset {
 	}
 
 	&__intro {
-		font-size: 18px;
+		font-size: 1.125rem;
 
 		@include respond-above(lg) {
-			font-size: 24px;
+			font-size: 1.5rem;
 		}
 	}
 
 	&__image {
-		min-width: 500px;
+		min-width: 31.25rem;
 		flex-basis: 0;
 		flex-grow: 999;
 
@@ -386,7 +385,7 @@ fieldset {
 	&__item {
 		flex: 1;
 		flex-wrap: wrap;
-		min-width: 235px;
+		min-width: 14.6875rem;
 
 		&--align-center {
 			display: flex;
@@ -401,7 +400,7 @@ fieldset {
 
 // Teams
 .teams {
-	padding: 100px 0;
+	padding: 6.25rem 0;
 
 	&__list {
 		padding: 0;
@@ -411,7 +410,7 @@ fieldset {
 	&__item {
 		display: flex;
 		flex-direction: column;
-		min-width: 320px;
+		min-width: 20rem;
 		flex-basis: 50%;
 		flex-shrink: 1;
 		flex-grow: 1;
@@ -428,24 +427,24 @@ fieldset {
 		}
 
 		> * {
-			margin-bottom: $padding-sm;
+			margin-bottom: $padding-sm!important;
 
 			@include respond-above(lg) {
-				margin-bottom: $padding-md;
+				margin-bottom: $padding-md!important;
 			}
 		}
 	}
 
 	&__heading {
-		margin-bottom: 10px;
+		margin-bottom: 0.625rem;
 		> span {
 			display: block;
-			font-size: 16px;
+			font-size: 1rem;
 		}
 	}
 
 	&__description {
-		font-size: 18px;
+		font-size: 1.125rem;
 
 		small {
 			display: block;
@@ -456,8 +455,8 @@ fieldset {
 	&__logo {
 		order: -1;
 		width: 100%;
-		min-width: 100px + $padding-md * 2;
-		max-width: 100px + $padding-md * 2;
+		min-width: 6.25rem + $padding-md * 2;
+		max-width: 6.25rem + $padding-md * 2;
 
 		picture {
 			max-width: 100%;
@@ -467,5 +466,22 @@ fieldset {
 				height: auto;
 			}
 		}
+	}
+}
+
+.footer {
+	color: white;
+	padding: $padding-sm 0;
+
+	@include respond-above(lg) {
+		padding: $padding-md 0;
+	}
+
+	&__wrapper {
+		justify-content: center;
+	}
+
+	&__year {
+		margin-bottom: 0;
 	}
 }

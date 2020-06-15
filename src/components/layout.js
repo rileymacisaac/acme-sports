@@ -1,5 +1,4 @@
 import React from "react"
-import typography from "../utils/typography";
 import "../../sass/styles.scss"
 
 const Layout = ({ children }) => {
@@ -27,11 +26,13 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      <footer>
+      <footer className="footer background-blue">
         <div className="container">
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <div className="footer__wrapper flow-vertical">
+            <p className="footer__year">
+              &copy; {new Date().getFullYear()}, Built by Riley MacIsaac
+            </p>
+          </div>
         </div>
       </footer>
     </div>

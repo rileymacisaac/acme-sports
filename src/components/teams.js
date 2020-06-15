@@ -60,6 +60,18 @@ class AllTeams extends Component {
 		});
 	}
 
+	sendFocus = (e) => {
+		// If button clicked via keyboard
+		if (e.nativeEvent.detail === 0) {
+			setTimeout(function() {
+				const teams = document.querySelectorAll('.teams__item');
+				teams[0].setAttribute('tabindex', '-1');
+				teams[0].focus();
+			}, 0);
+		}
+	}
+
+
 	render() {
 		var list = '';
 
@@ -137,7 +149,7 @@ class AllTeams extends Component {
 					</div>
 
 					<div className="filters__item filters__item--align-center">
-						<button type="submit" className="link">Filter Teams</button>
+						<button type="submit" className="link" onClick={((e) => this.sendFocus(e))}>Filter Teams</button>
 					</div>
 				</form>
 				</>
