@@ -1,67 +1,38 @@
 import React from "react"
-import { Link } from "gatsby"
+import typography from "../utils/typography";
+import "../../sass/styles.scss"
 
-import { rhythm, scale } from "../utils/typography"
-
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
-
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
+const Layout = ({ children }) => {
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
+    <div className="site-wrap">
+      <a href="#content" className="skip-link sr-only sr-only-focusable link">Skip to main content</a>
+
+      <header className="header">
+        <div className="container">
+          <div className="header__wrapper flow-vertical">
+            <div className="header__left">
+              <a href="/" className="header__logo font-red-hat-display" aria-current="page">
+                ACME Sports
+              </a>
+            </div>
+
+            <div className="header__right">
+              <a href="mailto:info@acmesports.example" className="header__link link">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="content">
+        {children}
+      </main>
+
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <div className="container">
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </div>
       </footer>
     </div>
   )
